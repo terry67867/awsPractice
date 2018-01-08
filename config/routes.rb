@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   # delete '/posts/:id' => 'posts#destroy'
 
   get '/users/index' => 'users#index'
+  # Like
+  post '/posts/:id/like' => 'posts#like_board'
 end
