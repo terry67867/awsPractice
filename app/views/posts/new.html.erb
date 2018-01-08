@@ -1,0 +1,15 @@
+<!-- <form action = "/posts" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="file" name="post[postimage]" /><br/>
+  <input type="text" name="title" /><br/>
+  <textarea name = "content" placeholder="내용을 입력하세요"></textarea><br/>
+  <input type="submit" value="작성완료"/>
+</form> -->
+
+<%= form_tag("/posts", method: "post", multipart: true) do %>
+  <%= text_field_tag("post[title]") %><br/>
+  <%= text_area_tag("post[content]") %><br/>
+  <%= file_field_tag("post[postimage]") %><br/>
+  <%= submit_tag %>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_tag("/posts/#{@post.id}%", method: "put") do %>
+  <%= text_field_tag("post[title]" , @post.title)%>
+  <%= text_area_tag("post[content]" , @post.content)%>
+  <%= file_field_tag("post[postimage]") %><br/>
+  <%= submit_tag %>
+<% end %>
